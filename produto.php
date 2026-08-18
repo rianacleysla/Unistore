@@ -1,3 +1,4 @@
+include "conexao.php";
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -49,7 +50,7 @@
     <div class="produto-card">
         <div class="produto-imagem"><img src="https://i.pinimg.com/736x/cb/33/9a/cb339a683738c3e97a95f37d377d69f3.jpg" alt="MLP"></div>
         <div class="produto-info">
-            <p class="produto-nome">Miniaturas My Little Pony/p>
+            <p class="produto-nome">Miniaturas My Little Pony</p>
             <p class="produto-preco">$5</p>
         </div>
     </div>
@@ -65,15 +66,15 @@
     <div class="produto-card">
         <div class="produto-imagem"><img src="https://i.pinimg.com/736x/07/a2/e2/07a2e259bac5f66945a1a75832d86ee1.jpg" alt="Ponei"></div>
         <div class="produto-info">
-            <p class="produto-nome">Unicornios de porcelana/p>
+            <p class="produto-nome">Unicornios de porcelana</p>
             <p class="produto-preco">$13</p>
         </div>
     </div>
 
     <div class="produto-card destaque">
-        <div class="produto-imagem"><img src="https://i.pinimg.com/736x/16/9e/6e/169e6e07391edec0c579f7c968333bfd.jpg" alt="ble"></div>
+        <div class="produto-imagem"><img src="https://i.pinimg.com/736x/16/9e/6e/169e6e07391edec0c579f7c968333bfd.jpg" alt="Carrossel"></div>
         <div class="produto-info">
-            <p class="produto-nome">Carrossel/p>
+            <p class="produto-nome">Carrossel</p>
             <p class="produto-preco">$20</p>
         </div>
     </div>
