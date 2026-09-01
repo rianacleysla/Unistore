@@ -78,184 +78,177 @@ if (isset($_POST['inserir'])) {
 <title>Cadastro de Produto</title>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-    :root {
-        --brand-gradient: linear-gradient(135deg, #f472b6 0%, #facc15 100%);
-        --bg-gradient: linear-gradient(135deg, #ffe0f0 0%, #fff8d6 50%, #ffd6e8 100%);
-        --color-primary: #be185d;
-        --color-primary-light: #f472b6;
-        --color-border: #fbb6d4;
-        --color-text-main: #831843;
-        --color-text-dim: #f0abcb;
-        --shadow-main: 0 8px 32px rgba(220, 80, 140, 0.15);
-        --shadow-subtle: 0 2px 8px rgba(220, 80, 140, 0.08);
-        --transition-fast: 0.2s ease;
+      margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Segoe UI', sans-serif;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-        background: var(--bg-gradient);
-        font-family: 'Poppins', sans-serif;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
+ 
+    body{
+        background: linear-gradient(135deg, #ffe6f2, #ffd6eb);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        padding:20px;
     }
-
-    .container { width: 100%; max-width: 480px; }
-
-    .card {
-        background: #ffffff;
-        padding: 40px 36px;
-        border-radius: 24px;
-        box-shadow: var(--shadow-main), var(--shadow-subtle);
-        border: 1.5px solid #f9c6de;
+ 
+    .container{
+        width:100%;
+        max-width:420px;
+        background:white;
+        padding:35px;
+        border-radius:20px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.15);
     }
-
-    .logo-circle {
-        width: 64px; height: 64px;
-        background: var(--brand-gradient);
-        border-radius: 50%;
-        margin: 0 auto 20px;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 26px;
+ 
+    .logo{
+        display:block;
+        margin:0 auto 15px auto;
+        font-size:40px;
+        text-align:center;
     }
-
-    h2 {
-        text-align: center;
-        color: var(--color-primary);
-        font-size: 22px; font-weight: 600;
-        margin-bottom: 6px;
+ 
+    h2{
+        text-align:center;
+        color:#8b3a62;
+        margin-bottom:6px;
     }
-
-    .subtitle {
-        text-align: center;
-        color: var(--color-text-dim);
-        font-size: 13px; margin-bottom: 28px;
+ 
+    .subtitulo{
+        text-align:center;
+        color:#c084a8;
+        font-size:13px;
+        margin-bottom:20px;
     }
-
-    .row { display: flex; gap: 14px; }
-    .row .field { flex: 1; }
-
-    label {
-        display: block;
-        font-size: 11px; font-weight: 600;
-        color: var(--color-primary);
-        margin-bottom: 8px;
-        text-transform: uppercase; letter-spacing: 0.8px;
+ 
+    form{
+        display:flex;
+        flex-direction:column;
     }
-
-    input, select, textarea {
-        width: 100%;
-        padding: 12px 16px;
-        margin-bottom: 20px;
-        border: 1.5px solid var(--color-border);
-        border-radius: 12px;
-        background: #fff5fa;
-        font-family: inherit; font-size: 14px;
-        color: var(--color-text-main);
-        outline: none;
-        transition: var(--transition-fast);
-        appearance: none; -webkit-appearance: none;
+ 
+    label{
+        margin-top:12px;
+        margin-bottom:5px;
+        color:#8b3a62;
+        font-weight:600;
+        font-size:14px;
     }
-
-    input:focus, select:focus, textarea:focus {
-        border-color: var(--color-primary-light);
-        box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.15);
-        background: #ffffff;
+ 
+    input, select{
+        padding:12px;
+        border-radius:12px;
+        border:1px solid #f8c8dc;
+        outline:none;
+        transition:0.3s;
+        font-family:inherit;
+        font-size:14px;
+        color:#5c2a44;
+        background:#fffafc;
+        appearance:none;
+        -webkit-appearance:none;
     }
-
-    input::placeholder, textarea::placeholder { color: var(--color-text-dim); }
-
-    select {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23be185d' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
+ 
+    select{
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b3a62' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat:no-repeat;
         background-position: right 14px center;
-        padding-right: 36px;
-        cursor: pointer;
+        padding-right:36px;
+        cursor:pointer;
     }
-
-    textarea { resize: vertical; min-height: 90px; }
-
-    /* Input de arquivo estilizado */
-    input[type="file"] {
-        padding: 10px 14px;
-        cursor: pointer;
-        background: #fff5fa;
+ 
+    input:focus, select:focus{
+        border-color:#d63384;
+        box-shadow:0 0 8px rgba(214,51,132,0.3);
     }
-
-    input[type="file"]::file-selector-button {
-        border: none;
-        background: var(--brand-gradient);
-        color: #ffffff;
-        padding: 8px 14px;
-        border-radius: 8px;
-        font-family: inherit;
-        font-size: 12px;
-        font-weight: 600;
-        margin-right: 12px;
-        cursor: pointer;
-        transition: var(--transition-fast);
+ 
+    input[type="file"]{
+        padding:8px;
+        cursor:pointer;
+        background:#fffafc;
     }
-
-    input[type="file"]::file-selector-button:hover {
-        opacity: 0.9;
+ 
+    input[type="file"]::file-selector-button{
+        border:none;
+        background:#d63384;
+        color:white;
+        padding:8px 14px;
+        border-radius:20px;
+        font-family:inherit;
+        font-size:12px;
+        font-weight:bold;
+        margin-right:12px;
+        cursor:pointer;
+        transition:0.3s;
     }
-
-    .preview-imagem {
-        display: none;
-        width: 100%;
-        max-height: 180px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-top: -8px;
-        margin-bottom: 20px;
-        border: 1.5px solid var(--color-border);
+ 
+    input[type="file"]::file-selector-button:hover{
+        background:#c2186a;
     }
-
-    button {
-        width: 100%; padding: 14px;
-        background: var(--brand-gradient);
-        color: #ffffff; border: none;
-        border-radius: 12px;
-        font-size: 15px; font-weight: 600;
-        font-family: inherit; cursor: pointer;
-        transition: transform 0.1s, opacity 0.2s, box-shadow 0.2s;
-        margin-top: 4px;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+ 
+    .preview-imagem{
+        display:none;
+        width:100%;
+        max-height:160px;
+        object-fit:cover;
+        border-radius:12px;
+        margin-top:10px;
+        border:1px solid #f8c8dc;
     }
-
-    button:hover {
-        opacity: 0.95; transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(244, 114, 182, 0.2);
+ 
+    button{
+        margin-top:25px;
+        padding:12px;
+        border:none;
+        border-radius:25px;
+        background:#d63384;
+        color:white;
+        font-size:16px;
+        font-weight:bold;
+        cursor:pointer;
+        transition:0.3s;
     }
-
-    button:active { transform: translateY(0px); }
-
-    .erro, .sucesso {
-        font-size: 13px; font-weight: 500;
-        text-align: center; padding: 12px;
-        margin-bottom: 20px;
-        border-radius: 10px; border: 1px solid;
+ 
+    button:hover{
+        background:#c2186a;
+        transform:scale(1.03);
     }
-
-    .erro   { color: #be123c; background: #fff1f5; border-color: #fda4af; }
-    .sucesso { color: #166534; background: #f0fdf4; border-color: #86efac; }
-
-    .footer-link {
-        text-align: center; margin-top: 24px;
-        font-size: 13px; color: var(--color-text-dim);
+ 
+    .mensagem{
+        margin-top:15px;
+        text-align:center;
+        font-weight:bold;
+        color:#8b3a62;
     }
-
-    .footer-link a {
-        color: var(--color-primary); font-weight: 600;
-        text-decoration: none; transition: color 0.2s;
+ 
+    .erro, .sucesso{
+        font-size:13px;
+        font-weight:600;
+        text-align:center;
+        padding:12px;
+        margin-bottom:15px;
+        border-radius:12px;
+        border:1px solid;
     }
+ 
+    .erro{ color:#c2186a; background:#fff1f5; border-color:#f8c8dc; }
+    .sucesso{ color:#166534; background:#f0fdf4; border-color:#86efac; }
+ 
+    .footer-link{
+        text-align:center;
+        margin-top:20px;
+        font-size:13px;
+        color:#c084a8;
+    }
+ 
+    .footer-link a{
+        color:#d63384;
+        font-weight:600;
+        text-decoration:none;
+    }
+ 
+    .footer-link a:hover{ text-decoration:underline; }
 
-    .footer-link a:hover { text-decoration: underline; color: var(--color-primary-light); }
 </style>
 </head>
 <body>
@@ -286,7 +279,7 @@ if (isset($_POST['inserir'])) {
             <div class="row">
                 <div class="field">
                     <label>Preço</label>
-                    <input name="preco" type="text" placeholder="Ex: um abraço verdadeiro" required
+                    <input name="preco" type="text" required
                             value="<?php echo htmlspecialchars($_POST['preco'] ?? ''); ?>">
                 </div>
             </div>
