@@ -1,4 +1,4 @@
-- no cadprod ok, falta arrumar css
+- cadprod ok, falta arrumar css
 - produto ok
 - tem que fazer a parte de forum pros clientes conversarem entre si
 - falta fazer o carrinho
